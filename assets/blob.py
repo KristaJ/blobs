@@ -7,7 +7,7 @@ class Blob:
                        height:int=500, 
                        num_points:int=None, 
                        color:str=None,
-                       opacity:float=0.8):
+                       opacity:float=None):
         
         self.height=height
         self.width=width
@@ -25,8 +25,10 @@ class Blob:
         if not color:
             color = "#%06x" % random.randint(0, 0xFFFFFF)
         self.color = color
-        
-        self.opacity=opacity
+        if opacity is None:
+            opacity = random.uniform(0, 100)
+        self.opacity = opacity
+
 
     def get_svg(self):
         return self.path_bw, self.path_color
