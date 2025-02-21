@@ -38,8 +38,8 @@ class Blob:
         x_rand = self.width*.1
         y_rand = self.height*.1
         for i in range(self.num_points):
-            x = self.center_x + self.radius * math.sin(self.angle_step * i) + random.randint(x_rand*-1,x_rand)
-            y = self.center_y + self.radius * math.cos(self.angle_step * i) + random.randint(y_rand*-1,y_rand)
+            x = self.center_x + self.radius * math.sin(self.angle_step * i) + random.uniform(x_rand*-1,x_rand)
+            y = self.center_y + self.radius * math.cos(self.angle_step * i) + random.uniform(y_rand*-1,y_rand)
             self.circle_coords.append((x,y))
         
     def make_blob(self):
